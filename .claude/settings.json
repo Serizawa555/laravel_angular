@@ -1,0 +1,29 @@
+{
+    "permissions": {
+        "allow": [
+            "Bash(php artisan:*)",
+            "Bash(composer:*)",
+            "Bash(./vendor/bin/sail:*)",
+            "Bash(./vendor/bin/pest:*)",
+            "Bash(./vendor/bin/pint:*)",
+            "Bash(./vendor/bin/phpstan:*)",
+            "Bash(npm run:*)",
+            "Bash(npx ng:*)",
+            "Bash(git status)",
+            "Bash(git diff:*)",
+            "Bash(git log:*)"
+        ]
+    },
+    "hooks": {
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "test -f CLAUDE.md || echo 'No .claude context kit found - run /bootstrap-context to generate one.'"
+                    }
+                ]
+            }
+        ]
+    }
+}
