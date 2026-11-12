@@ -1,0 +1,9 @@
+.git
+**/node_modules
+backend/vendor
+frontend/dist
+backend/.env
+backend/.env.*
+backend/storage/app/private/orders
+backend/storage/logs/*
+**/*.log

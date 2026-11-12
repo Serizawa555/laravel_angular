@@ -1,0 +1,60 @@
+# Render Blueprint — deploys the whole app (Angular + Laravel) as one web service,
+# plus a managed PostgreSQL. Cache + sessions use the database, so no Redis needed.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: phoneshop
+    runtime: docker
+    plan: free
+    branch: develop
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /up
+    # Runs after build, before traffic switches: prepare the DB + demo data.
+    preDeployCommand: "php artisan migrate --force --seed && php artisan storage:link || true"
+    envVars:
+      - key: APP_NAME
+        value: PhoneShop
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false # set to a `php artisan key:generate --show` value
+      - key: APP_URL
+        sync: false # set to the https://… URL Render assigns (after first deploy)
+      - key: SANCTUM_STATEFUL_DOMAINS
+        sync: false # set to the Render host, e.g. phoneshop.onrender.com
+      - key: SESSION_SECURE_COOKIE
+        value: "true"
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase: { name: phoneshop-db, property: host }
+      - key: DB_PORT
+        fromDatabase: { name: phoneshop-db, property: port }
+      - key: DB_DATABASE
+        fromDatabase: { name: phoneshop-db, property: database }
+      - key: DB_USERNAME
+        fromDatabase: { name: phoneshop-db, property: user }
+      - key: DB_PASSWORD
+        fromDatabase: { name: phoneshop-db, property: password }
+      - key: SUPERADMIN_NAME
+        value: "Demo Admin"
+      - key: SUPERADMIN_EMAIL
+        sync: false
+      - key: SUPERADMIN_PASSWORD
+        sync: false
+
+databases:
+  - name: phoneshop-db
+    plan: free
+    databaseName: phoneshop
+    user: phoneshop

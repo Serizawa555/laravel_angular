@@ -14,6 +14,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Behind Render's load balancer: trust forwarded headers so the request scheme is
+        // HTTPS (correct APP_URL + secure Sanctum cookies). Harmless locally.
+        $middleware->trustProxies(at: '*');
+
         // Sanctum SPA (cookie) auth: make /api stateful so the session + CSRF cookie
         // from the Angular dev origin are honoured. See PROMPT.md §2 (auth).
         $middleware->statefulApi();

@@ -1,0 +1,23 @@
+{
+	# FrankenPHP; Render terminates TLS at its proxy and forwards plain HTTP to $PORT.
+	frankenphp
+	auto_https off
+	order php_server before file_server
+}
+
+:{$PORT:8080} {
+	root * /app/public
+	encode zstd gzip
+
+	# Laravel owns the API, the Sanctum CSRF-cookie route, and the health check.
+	@laravel path /api/* /sanctum/* /up
+	handle @laravel {
+		php_server
+	}
+
+	# Everything else is static: SPA assets + /storage, with SPA history fallback.
+	handle {
+		try_files {path} /index.html
+		file_server
+	}
+}
