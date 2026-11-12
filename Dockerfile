@@ -13,7 +13,9 @@ RUN npm run build
 FROM composer:2 AS vendor
 WORKDIR /app
 COPY backend/composer.json backend/composer.lock ./
-RUN composer install --no-dev --no-scripts --prefer-dist --no-interaction --no-progress
+# --ignore-platform-reqs: the composer image lacks ext-exif/gd etc., but the RUNTIME image
+# (FrankenPHP stage below) has them, so skip the platform check while resolving dependencies.
+RUN composer install --no-dev --no-scripts --prefer-dist --no-interaction --no-progress --ignore-platform-reqs
 COPY backend/ ./
 RUN composer dump-autoload --optimize --no-dev --no-scripts
 
