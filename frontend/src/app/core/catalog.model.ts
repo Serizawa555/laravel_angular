@@ -16,6 +16,7 @@ export interface ProductCard {
   featured_position: number | null;
   image: string | null;
   default_variant_id?: number | null;
+  variant_count?: number;
 }
 
 export interface OptionValueRef {

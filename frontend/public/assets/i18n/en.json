@@ -38,6 +38,7 @@
     "fits": "Fits these phones",
     "related": "Related products",
     "select_options": "Select options",
+    "choose_options": "Choose options",
     "quantity": "Quantity"
   },
   "auth": {
@@ -45,5 +46,7 @@
     "confirm_password": "Confirm password", "name": "Name",
     "no_account": "No account?", "have_account": "Already have an account?",
     "logging_in": "Logging in…", "creating": "Creating…"
-  }
+  },
+  "favorites": { "empty": "You haven't saved any favorites yet." },
+  "toast": { "added": "Added to cart", "view_cart": "View cart", "add_failed": "Could not add to cart" }
 }

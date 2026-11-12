@@ -33,6 +33,8 @@ class ProductCardResource extends JsonResource
             'in_stock' => $this->whenLoaded('variants', fn () => $this->variants->sum('stock') > 0),
             // Lets listing cards "quick add": the default (or cheapest in-stock) variant.
             'default_variant_id' => $this->whenLoaded('variants', fn () => $this->defaultVariantId()),
+            // When > 1, the card links to the PDP ("Choose options") instead of silently adding.
+            'variant_count' => $this->whenLoaded('variants', fn () => $this->variants->count()),
             'is_featured' => $this->is_featured,
             'featured_position' => $this->featured_position,
             'image' => $this->whenLoaded('media', fn () => $this->cardImage()),

@@ -64,6 +64,34 @@ it('filters by price range and in_stock', function () {
     expect($cheap)->toContain('xiaomi-wired-earphones')->not->toContain('apple-iphone-17');
 });
 
+it('filters by an explicit id list (for favorites), published only', function () {
+    $ids = Product::published()->limit(3)->pluck('id');
+
+    $res = $this->getJson(q(['filter' => ['ids' => $ids->implode(',')]]));
+    $returned = collect($res->json('data'))->pluck('id');
+
+    expect($returned->sort()->values()->all())->toBe($ids->sort()->values()->all())
+        ->and($res->json('data.0'))->toHaveKey('default_variant_id');
+});
+
+it('drops unpublished and soft-deleted ids from the list', function () {
+    $live = Product::published()->firstOrFail();
+    $draft = Product::published()->where('id', '!=', $live->id)->firstOrFail();
+    $draft->update(['status' => 'draft']);
+    $trashed = Product::published()->whereNotIn('id', [$live->id, $draft->id])->firstOrFail();
+    $trashed->delete();
+
+    $slugs = collect($this->getJson(q(['filter' => ['ids' => "{$live->id},{$draft->id},{$trashed->id}"]]))->json('data'))
+        ->pluck('id');
+
+    expect($slugs->all())->toBe([$live->id]);
+});
+
+it('ignores non-numeric ids gracefully', function () {
+    // intval('abc') === 0, which matches nothing — no error, just an empty set.
+    $this->getJson(q(['filter' => ['ids' => 'abc,xyz']]))->assertOk()->assertJsonCount(0, 'data');
+});
+
 it('filters accessories compatible with a phone', function () {
     $slugs = collect($this->getJson(q(['filter' => ['compatible_with' => 'apple-iphone-17']]))->json('data'))->pluck('slug');
     expect($slugs)->toContain('silicone-case-iphone-17');

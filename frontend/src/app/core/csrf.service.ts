@@ -14,4 +14,10 @@ export class CsrfService {
     ).then(() => undefined);
     return this.primed;
   }
+
+  /** Force a fresh token (after a 419) and retry priming. */
+  reprime(): Promise<void> {
+    this.primed = undefined;
+    return this.prime();
+  }
 }

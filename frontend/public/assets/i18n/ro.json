@@ -38,6 +38,7 @@
     "fits": "Compatibil cu aceste telefoane",
     "related": "Produse similare",
     "select_options": "Alege opțiunile",
+    "choose_options": "Alege opțiunile",
     "quantity": "Cantitate"
   },
   "auth": {
@@ -45,5 +46,7 @@
     "confirm_password": "Confirmă parola", "name": "Nume",
     "no_account": "Nu ai cont?", "have_account": "Ai deja un cont?",
     "logging_in": "Se autentifică…", "creating": "Se creează…"
-  }
+  },
+  "favorites": { "empty": "Nu ai salvat încă niciun favorit." },
+  "toast": { "added": "Adăugat în coș", "view_cart": "Vezi coșul", "add_failed": "Nu s-a putut adăuga în coș" }
 }

@@ -27,6 +27,13 @@ class ProductQuery
         $get = fn (string $key) => in_array($key, $except, true) ? null : ($filters[$key] ?? null);
         $list = fn ($v): array => array_filter(is_array($v) ? $v : explode(',', (string) $v), fn ($s) => $s !== '');
 
+        // Explicit id list (e.g. favorites). Integers only, capped — unknown/unpublished ids
+        // simply don't match, so stale favorites drop out silently.
+        if ($ids = $get('ids')) {
+            $intIds = array_slice(array_map('intval', $list($ids)), 0, 100);
+            $query->whereIn('id', $intIds);
+        }
+
         if ($type = $get('type')) {
             $query->whereIn('type', $list($type));
         }

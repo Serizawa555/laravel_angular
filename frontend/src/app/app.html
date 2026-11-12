@@ -78,7 +78,10 @@
         <a [routerLink]="loc.link('cart')" class="relative inline-flex items-center text-gray-600 hover:text-brand" [attr.aria-label]="'nav.cart' | transloco" [title]="'nav.cart' | transloco">
           <span class="text-xl leading-none">🛒</span>
           @if (cart.count()) {
-            <span class="absolute -right-2 -top-1 rounded-full bg-brand px-1.5 text-[10px] font-semibold text-white">{{ cart.count() }}</span>
+            <span
+              class="absolute -right-2 -top-1 rounded-full bg-brand px-1.5 text-[10px] font-semibold text-white transition-transform"
+              [class.scale-150]="cartBump()"
+            >{{ cart.count() }}</span>
           }
         </a>
       </div>
@@ -89,6 +92,8 @@
 <main class="min-h-[70vh] bg-mist/40">
   <router-outlet />
 </main>
+
+<app-toast-host />
 
 <footer class="border-t border-gray-200 bg-white">
   <div class="mx-auto max-w-6xl p-6 text-sm text-gray-500">

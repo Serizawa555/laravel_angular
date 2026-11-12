@@ -2,6 +2,27 @@
 
 Short, append-only record of choices that are reversible-but-notable. Newest first.
 
+## 2026-11-12 — Fix: product-card quick-add & favorites single-source-of-truth
+- **The client stores only IDs; the API is the single source of catalog data.** Favorites in
+  localStorage are now a `number[]` under `favorites:v2` (legacy full-`ProductCard` snapshots under
+  `favorites` are migrated to IDs on first load, then the old key is dropped). Cards are always
+  fetched fresh via `GET /products?filter[ids]=…`, so price/stock/name/image can't go stale and
+  unpublished favorites silently disappear (the store prunes ids the API stops returning). This is
+  what fixed the faded/dead quick-add button: stale snapshots lacked `default_variant_id`.
+- **Quick-add only for single-variant products.** Cards now show **"Choose options"** (a link to the
+  PDP) when `variant_count > 1` — we don't silently guess a phone's colour/RAM/storage. Single-variant
+  products get a real quick-add. (`variant_count` added to `ProductCardResource`.)
+- **Feedback + errors**: a small signal-based `ToastService` (+ `aria-live` host) shows success
+  ("Added to cart — {name}" with a View-cart link) or the API error message; the header cart badge
+  pulses. `CartStore` methods throw typed `HttpErrorResponse` and **retry once on 419** after
+  re-priming CSRF.
+- **Accessible card**: root is `<article>`; the title is a **stretched link** (`after:absolute
+  after:inset-0`) so the whole card is clickable, while the favorite/add buttons are siblings with
+  `z-10` — no interactive elements nested inside an `<a>`, so keyboard/screen-reader work and the
+  `preventDefault/stopPropagation` hacks are gone. Cart icon is a crisp inline SVG; disabled state is
+  grey + `cursor-not-allowed` (not translucent orange).
+
+
 ## 2026-11-10 — Milestone 10: polish
 - **Caching**: public `featured` + `taxonomies` use a **version-keyed cache** (`CatalogCache`) —
   a single `catalog:version` counter bumped on any Product/ProductVariant/Term change invalidates

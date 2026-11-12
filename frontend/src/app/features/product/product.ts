@@ -260,10 +260,12 @@ export class ProductPage {
 
   toggleFavorite(): void {
     const p = this.product();
-    if (p) this.favorites.toggle(this.asCard(p));
+    if (p) this.favorites.toggle(p.id);
   }
 
   private asCard(p: ProductDetail): ProductCard {
+    const inStock = p.variants.filter((v) => v.stock > 0);
+    const defaultVariant = (inStock.length ? inStock : p.variants).find((v) => v.is_default) ?? inStock[0];
     return {
       id: p.id,
       slug: p.slug,
@@ -275,10 +277,12 @@ export class ProductPage {
       segment: p.segment?.name ?? null,
       from_price: p.from_price,
       compare_at_price: null,
-      in_stock: this.stock() > 0,
+      in_stock: inStock.length > 0,
       is_featured: p.is_featured,
       featured_position: null,
       image: p.image,
+      default_variant_id: defaultVariant?.id ?? null,
+      variant_count: p.variants.length,
     };
   }
 
