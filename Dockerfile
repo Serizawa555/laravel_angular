@@ -28,9 +28,11 @@ COPY --from=vendor /app /app
 COPY --from=frontend /app/dist/frontend/browser/ /app/public/
 # Web-server config (routes /api + /sanctum to PHP, everything else to the SPA)
 COPY deploy/Caddyfile /etc/caddy/Caddyfile
+COPY deploy/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # Writable runtime dirs
 RUN chmod -R ugo+rw storage bootstrap/cache
 
-# Render provides $PORT; the Caddyfile listens on it.
-CMD ["frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile"]
+# Render provides $PORT; the Caddyfile listens on it. Entrypoint migrates+seeds then serves.
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

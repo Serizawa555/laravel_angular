@@ -9,8 +9,8 @@ services:
     branch: develop
     dockerfilePath: ./Dockerfile
     healthCheckPath: /up
-    # Runs after build, before traffic switches: prepare the DB + demo data.
-    preDeployCommand: "php artisan migrate --force --seed && php artisan storage:link || true"
+    # NOTE: free-tier services can't use preDeployCommand — migrate/seed runs in the
+    # container entrypoint (deploy/entrypoint.sh) on start instead.
     envVars:
       - key: APP_NAME
         value: PhoneShop
