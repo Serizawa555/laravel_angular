@@ -5,6 +5,13 @@ Domain = **products** (phones, cases, Bluetooth headsets, wired headsets) with *
 `PROMPT.md §3`. Prices are **integer bani** everywhere. Translatable fields are **JSON per locale
 (EN default + RO)**.
 
+> **All tables below are built and migrated** (as of 2026-11-12). Two additions beyond the original
+> schema: product **images** via spatie/medialibrary (a `gallery` media collection on `products`,
+> thumb/card/large conversions, SVG placeholder fallback), and `spatie/laravel-activitylog`
+> (`activity_log` table; product lifecycle only). **The browser never caches catalog rows** — guest
+> favorites store only product **IDs** and refetch cards via `GET /products?filter[ids]=` (see
+> `docs/DECISIONS.md`).
+
 > Drupal analogs: `vocabularies`+`terms` ≈ vocabularies+terms; `attribute_definitions` ≈ field
 > definitions driving a form; `products.specs` JSONB ≈ a serialized field bag; enum `type` ≈
 > bundle. Structural config (below) is seeded, not click-built — see

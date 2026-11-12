@@ -21,8 +21,8 @@ with `./vendor/bin/sail`. Each milestone must run **and have tests** before the 
 4. **Action/Service** (`app/Actions/`) owns the logic + any DB transaction. Never trust client
    prices — recompute money/stock server-side.
 5. **API Resource** shapes JSON; emit the `Accept-Language` locale (public) or all locales (admin).
-6. **Filtering**: use spatie/laravel-query-builder with an explicit `allowedFilters`/`allowedSorts`
-   allow-list.
+6. **Filtering**: extend `App\Queries\ProductQuery` (hand-rolled, shared by listing + facets) — not
+   spatie/query-builder. Keep facet counts re-applying every filter except the counted one.
 7. **Test** (Pest feature test) — happy path + validation (422) + locale.
 
 ## Add an admin endpoint
@@ -52,5 +52,5 @@ Don't hard-code per-type fields. Add/change them in `attribute_definitions.json`
 - `./vendor/bin/sail test` green — feature test per endpoint incl. the role matrix; unit tests for
   price/stock/checkout.
 - Keep N+1 out: eager-load; `Model::preventLazyLoading()` is on in dev and will throw.
-- Scramble API docs regenerate from code — check `/docs/api` still builds.
+- (Scramble/OpenAPI docs are *not installed* — no `/docs/api`. Add `dedoc/scramble` if you want it.)
 - Note reversible-but-notable decisions in `docs/DECISIONS.md`.

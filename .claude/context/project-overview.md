@@ -5,31 +5,32 @@ headsets). Public storefront (browse, filter, PDP, favorites, cart, mock checkou
 back office. **EN (default) + RO**, currency **MDL**. See [`../../PROMPT.md`](../../PROMPT.md)
 for the full brief — this file is the orientation summary.
 
-> Milestone 1 scaffolded as of 2026-11-10. Installed versions: **Laravel 13.40 / PHP 8.5 /
-> PostgreSQL 18 / Angular 22.2** (Sail's current defaults — newer than the brief's 8.4/PG17; see
-> `docs/DECISIONS.md`). Rows below marked *(later)* aren't installed yet.
+> **Milestones 1–10 built** (as of 2026-11-12) — storefront + admin work end to end. Installed
+> versions: **Laravel 13.40 / PHP 8.5 / PostgreSQL 18 / Angular 22.2** (Sail's current defaults —
+> newer than the brief's 8.4/PG17; see `docs/DECISIONS.md`). Rows marked *(not installed)* were in
+> the brief but were deferred.
 
 ## Stack
 | Layer | Choice |
 |---|---|
-| Backend | **Laravel 13.40**, PHP **8.5** (Sail), API-only (`php artisan install:api`) |
+| Backend | **Laravel 13.40**, PHP **8.5** (Sail), API-only (`install:api`) |
 | Auth | **Sanctum SPA cookie mode** (session + CSRF; no tokens in localStorage) |
 | Roles | **spatie/laravel-permission** |
 | Translatable content | **spatie/laravel-translatable** (JSON columns, per-locale) |
-| Filtering API | **spatie/laravel-query-builder** (`?filter[brand]=apple&sort=-price`) |
-| Media | **spatie/laravel-medialibrary** (conversions: thumb, card, large) |
-| Audit | **spatie/laravel-activitylog** |
-| API docs | **dedoc/scramble** (OpenAPI at `/docs/api`) |
+| Filtering API | **hand-rolled `App\Queries\ProductQuery`** reading `?filter[...]`. spatie/laravel-query-builder is installed but unused — facets need to re-apply every filter *except* the counted one, which it doesn't do cleanly |
+| Media | **spatie/laravel-medialibrary** — `gallery` collection, conversions thumb/card/large (`nonQueued`), SVG placeholder fallback |
+| Audit | **spatie/laravel-activitylog** (product lifecycle; `/admin/activity`) |
+| API docs | **dedoc/scramble** — *(not installed)*; no `/docs/api` yet |
 | DB | **PostgreSQL 18** — relational + **JSONB** `specs` (GIN-indexed); Redis for cache/queue/session |
-| Backend tests / QA | **Pest**, **Laravel Pint**, **Larastan** |
-| Frontend | **Angular 22** — standalone, **signals**, zoneless, `@if`/`@for`, `inject()` |
-| Forms | **Signal Forms** (Reactive Forms only if a lib demands it) |
-| HTTP state | `httpResource()`/`resource()` + small signal-based stores (services). No NgRx |
-| UI | **Tailwind CSS 4** + **Angular CDK** (+ optional Angular Material in admin) |
-| UI i18n | **Transloco** — runtime switch, locale in URL (`/en`, `/ro`) |
-| Slider | **Swiper** (web-component build) |
-| Frontend tests / QA | **Vitest** + **Playwright** (e2e); angular-eslint + Prettier |
-| Local dev | **Laravel Sail** (Docker: PHP 8.4, PostgreSQL, Redis, Mailpit). Herd is an OK alt |
+| Backend tests / QA | **Pest** (66 tests), **Laravel Pint**, **Larastan** (level 6) |
+| Frontend | **Angular 22.2** — standalone, **signals**, **zoneless**, `@if`/`@for`, `inject()` |
+| Forms | **plain signals + controlled inputs** (Signal Forms' `[control]` directive is still privately exported in 22.2 — see DECISIONS) |
+| HTTP state | `firstValueFrom`/Observables feeding **signal-based stores** (`stores/`, `core/*.service.ts`). No NgRx |
+| UI | **Tailwind CSS 4** (brand theme via `@theme` tokens) + component classes in `styles.css`. No Angular Material/CDK yet |
+| UI i18n | **Transloco** — runtime switch, locale in URL (`/en`, `/ro`), `Accept-Language` interceptor |
+| Slider | **Swiper** (web-component build; `CUSTOM_ELEMENTS_SCHEMA`) |
+| Frontend tests / QA | **Vitest** (9 tests) + **Playwright** e2e spec (`frontend/e2e/`). **ESLint not configured** |
+| Local dev | **Laravel Sail** (Docker: PHP 8.5, PostgreSQL 18, Redis, Mailpit). Herd is an OK alt |
 
 ## Repo layout (monorepo)
 ```
@@ -51,10 +52,10 @@ Laravel API (/api/v1, JSON Resources)
    |  Accept-Language -> translated strings (public: 1 locale; admin: all locales)
    |  Form Request validation -> thin Controller -> Action/Service -> Eloquent
    v
-PostgreSQL 17 (relational + JSONB specs, GIN)   Redis (cache/queue/session)   Mailpit
+PostgreSQL 18 (relational + JSONB specs, GIN)   Redis (cache/queue/session)   Mailpit
    ^
    |  seeders apply structural config + demo catalog (config-and-seed.md)
-Checkout -> MockPaymentGateway -> writes storage/app/orders/{number}.json
+Checkout -> MockPaymentGateway -> writes storage/app/private/orders/{number}.json
 ```
 
 ## Build / run / test commands
@@ -67,8 +68,9 @@ Backend runs inside **Sail** (Docker). Prefix PHP/Composer/artisan with `./vendo
 | Backend tests | `./vendor/bin/sail test` (Pest) |
 | Format / analyse | `./vendor/bin/sail pint` · `./vendor/bin/sail php vendor/bin/phpstan analyse` |
 | Frontend dev server | `cd frontend && npm start` (`ng serve`, proxies to API) |
-| Frontend tests | `cd frontend && npm test` (Vitest) · `npx playwright test` (e2e) |
-| Frontend lint | `cd frontend && npm run lint` |
+| Frontend tests | `cd frontend && npx ng test --watch=false` (Vitest) · `npx playwright test` (e2e, needs `npx playwright install`) |
+| Frontend lint | *(not configured — no `npm run lint`)* |
+| All-in-one | `make help` lists shortcuts (`make up`, `make serve`, `make be-test`, `make fe-test`, `make fresh`, …) |
 
 ## Local-dev prefix
 **`./vendor/bin/sail`** for anything PHP/Composer/artisan/Pest (runs in-container). Frontend

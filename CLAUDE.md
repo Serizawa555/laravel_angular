@@ -66,12 +66,17 @@ git diff main --name-only
   `attribute_definitions` — do not hard-code per-type spec fields in forms or validators.
 - **RAM / storage / color are variant options**, not specs. Only realistic combinations exist.
 - **Angular is signal-first**: standalone components, `signals`, zoneless, new control flow
-  (`@if`/`@for`), `inject()`, Signal Forms, `httpResource()`. No NgRx. No NgModules.
-- **All listing/filter state lives in the URL query string** (shareable, back-button works).
-  Locale is a URL prefix: `/en/…`, `/ro/…`.
+  (`@if`/`@for`), `inject()`. No NgRx. No NgModules. Forms use **plain signals + controlled inputs**
+  (Signal Forms' `[control]` directive is still privately exported in 22.2 — see DECISIONS).
+- **The browser caches no catalog data — the API is the single source.** Favorites store only
+  product **IDs** (`favorites:v2`) and refetch cards via `GET /products?filter[ids]=`; nothing about
+  price/stock/name/image is persisted client-side.
+- **All listing/filter state lives in the URL query string** (shareable, back-button works) — the
+  listing reads `queryParamMap` directly (no FiltersStore). Locale is a URL prefix: `/en/…`, `/ro/…`.
 - **Secrets only in `.env`** (never committed). Superadmin is seeded from `.env`, never hard-coded.
-- **Media = one default placeholder JPEG**, resized into Medialibrary conversions
-  (`thumb`, `card`, `large`) — no real retailer photos. Swap for user-provided/generated images later.
+- **Media**: products fall back to a bundled **SVG placeholder** (`public/images/placeholder.svg`)
+  when they have no image; real uploads go through Medialibrary conversions (`thumb`/`card`/`large`).
+  No real retailer photos.
 - **Do not copy retailer marketing text/photos.** Seed only factual specs + approximate MDL
   prices, with source URL + date; write original short EN/RO descriptions.
 - Keep **`docs/DECISIONS.md`** (short ADR log) updated for reversible-but-notable choices.
