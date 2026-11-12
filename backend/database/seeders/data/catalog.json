@@ -1,0 +1,198 @@
+{
+  "_note": "Demo catalog. Specs are factual (from manufacturer product pages); MDL prices are APPROXIMATE placeholders to verify against darwin.md / orange.md before real use. No retailer marketing copy or photos are reproduced here; descriptions are original. Prices are integers in bani (1 MDL = 100 bani).",
+  "_source_date": "2026-11-10",
+  "products": [
+    {
+      "type": "phone", "slug": "apple-iphone-17", "sku_base": "APL-IP17",
+      "brand": "apple", "segment": "flagship",
+      "name": { "en": "Apple iPhone 17", "ro": "Apple iPhone 17" },
+      "short_description": { "en": "Apple's 2025 flagship with an OLED display and the latest A-series chip.", "ro": "Flagship-ul Apple din 2025, cu ecran OLED și cel mai recent cip A." },
+      "description": { "en": "A compact flagship with a bright OLED screen, a dual camera system and all-day battery life.", "ro": "Un flagship compact cu ecran OLED luminos, sistem dublu de camere și autonomie pe toată ziua." },
+      "specs": { "display_size_in": 6.3, "display_type": "OLED", "refresh_rate_hz": 120, "chipset": "Apple A19", "main_camera_mp": 48, "front_camera_mp": 18, "battery_mah": 3600, "charging_w": 30, "os": "iOS 26", "five_g": true, "nfc": true, "weight_g": 177, "release_year": 2025 },
+      "status": "published", "is_featured": true, "featured_position": 1,
+      "source": { "url": "https://www.apple.com/iphone-17/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "APL-IP17-BLK-128", "price": 2499900, "stock": 12, "is_default": true, "options": { "color": "black", "storage": "128gb" } },
+        { "sku": "APL-IP17-BLK-256", "price": 2799900, "stock": 8, "options": { "color": "black", "storage": "256gb" } },
+        { "sku": "APL-IP17-BLU-128", "price": 2499900, "stock": 5, "options": { "color": "blue", "storage": "128gb" } },
+        { "sku": "APL-IP17-BLU-256", "price": 2799900, "stock": 3, "options": { "color": "blue", "storage": "256gb" } }
+      ]
+    },
+    {
+      "type": "phone", "slug": "samsung-galaxy-s25", "sku_base": "SAM-S25",
+      "brand": "samsung", "segment": "flagship",
+      "name": { "en": "Samsung Galaxy S25", "ro": "Samsung Galaxy S25" },
+      "short_description": { "en": "Compact Android flagship with a 120 Hz AMOLED display.", "ro": "Flagship Android compact cu ecran AMOLED la 120 Hz." },
+      "description": { "en": "A pocketable flagship with a fast AMOLED screen, a versatile triple camera and a titanium-grade build.", "ro": "Un flagship de buzunar cu ecran AMOLED rapid, cameră triplă versatilă și construcție premium." },
+      "specs": { "display_size_in": 6.2, "display_type": "AMOLED", "refresh_rate_hz": 120, "chipset": "Snapdragon 8 Elite", "main_camera_mp": 50, "front_camera_mp": 12, "battery_mah": 4000, "charging_w": 25, "os": "Android 15", "five_g": true, "nfc": true, "weight_g": 162, "release_year": 2025 },
+      "status": "published", "is_featured": true, "featured_position": 2,
+      "source": { "url": "https://www.samsung.com/galaxy-s25/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "SAM-S25-NVY-12-128", "price": 1899900, "stock": 10, "is_default": true, "options": { "color": "navy", "ram": "12gb", "storage": "128gb" } },
+        { "sku": "SAM-S25-NVY-12-256", "price": 2099900, "stock": 6, "options": { "color": "navy", "ram": "12gb", "storage": "256gb" } },
+        { "sku": "SAM-S25-SLV-12-128", "price": 1899900, "stock": 7, "options": { "color": "silver", "ram": "12gb", "storage": "128gb" } },
+        { "sku": "SAM-S25-SLV-12-256", "price": 2099900, "stock": 4, "options": { "color": "silver", "ram": "12gb", "storage": "256gb" } }
+      ]
+    },
+    {
+      "type": "phone", "slug": "google-pixel-9a", "sku_base": "GOO-P9A",
+      "brand": "google", "segment": "mid-range",
+      "name": { "en": "Google Pixel 9a", "ro": "Google Pixel 9a" },
+      "short_description": { "en": "Mid-range Pixel with Google's computational camera.", "ro": "Pixel de gamă medie cu camera computațională Google." },
+      "description": { "en": "Clean Android, long software support and a camera that punches above its price.", "ro": "Android curat, suport software îndelungat și o cameră peste așteptări pentru preț." },
+      "specs": { "display_size_in": 6.3, "display_type": "OLED", "refresh_rate_hz": 120, "chipset": "Google Tensor G4", "main_camera_mp": 48, "front_camera_mp": 13, "battery_mah": 5100, "charging_w": 23, "os": "Android 15", "five_g": true, "nfc": true, "weight_g": 186, "release_year": 2025 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "source": { "url": "https://store.google.com/product/pixel_9a", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "GOO-P9A-BLK-8-128", "price": 999900, "stock": 15, "is_default": true, "options": { "color": "black", "ram": "8gb", "storage": "128gb" } },
+        { "sku": "GOO-P9A-BLK-8-256", "price": 1099900, "stock": 9, "options": { "color": "black", "ram": "8gb", "storage": "256gb" } },
+        { "sku": "GOO-P9A-GRN-8-128", "price": 999900, "stock": 6, "options": { "color": "green", "ram": "8gb", "storage": "128gb" } }
+      ]
+    },
+    {
+      "type": "phone", "slug": "samsung-galaxy-a56", "sku_base": "SAM-A56",
+      "brand": "samsung", "segment": "mid-range",
+      "name": { "en": "Samsung Galaxy A56", "ro": "Samsung Galaxy A56" },
+      "short_description": { "en": "Well-rounded mid-ranger with a big 120 Hz screen.", "ro": "Telefon de gamă medie echilibrat, cu ecran mare la 120 Hz." },
+      "description": { "en": "A dependable all-rounder: large AMOLED display, solid battery and clean one-handed software.", "ro": "Un all-rounder de încredere: ecran AMOLED mare, baterie solidă și software curat." },
+      "specs": { "display_size_in": 6.7, "display_type": "AMOLED", "refresh_rate_hz": 120, "chipset": "Exynos 1580", "main_camera_mp": 50, "front_camera_mp": 12, "battery_mah": 5000, "charging_w": 45, "os": "Android 15", "five_g": true, "nfc": true, "weight_g": 198, "release_year": 2025 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "source": { "url": "https://www.samsung.com/galaxy-a56/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "SAM-A56-BLK-8-128", "price": 749900, "stock": 20, "is_default": true, "options": { "color": "black", "ram": "8gb", "storage": "128gb" } },
+        { "sku": "SAM-A56-BLK-8-256", "price": 849900, "stock": 11, "options": { "color": "black", "ram": "8gb", "storage": "256gb" } },
+        { "sku": "SAM-A56-BLU-8-128", "price": 749900, "stock": 8, "options": { "color": "blue", "ram": "8gb", "storage": "128gb" } }
+      ]
+    },
+    {
+      "type": "phone", "slug": "samsung-galaxy-a16", "sku_base": "SAM-A16",
+      "brand": "samsung", "segment": "economy",
+      "name": { "en": "Samsung Galaxy A16", "ro": "Samsung Galaxy A16" },
+      "short_description": { "en": "Budget phone with a large display and long update support.", "ro": "Telefon accesibil cu ecran mare și suport de actualizări îndelungat." },
+      "description": { "en": "An affordable daily phone with a big screen and dependable battery life.", "ro": "Un telefon accesibil pentru zi cu zi, cu ecran mare și baterie de încredere." },
+      "specs": { "display_size_in": 6.7, "display_type": "AMOLED", "refresh_rate_hz": 90, "chipset": "MediaTek Helio G99", "main_camera_mp": 50, "front_camera_mp": 13, "battery_mah": 5000, "charging_w": 25, "os": "Android 14", "five_g": true, "nfc": true, "weight_g": 200, "release_year": 2024 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "source": { "url": "https://www.samsung.com/galaxy-a16/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "SAM-A16-BLK-4-128", "price": 349900, "stock": 25, "is_default": true, "options": { "color": "black", "ram": "4gb", "storage": "128gb" } },
+        { "sku": "SAM-A16-BLU-4-128", "price": 349900, "stock": 14, "options": { "color": "blue", "ram": "4gb", "storage": "128gb" } }
+      ]
+    },
+    {
+      "type": "phone", "slug": "xiaomi-redmi-14c", "sku_base": "XIA-R14C",
+      "brand": "xiaomi", "segment": "economy",
+      "name": { "en": "Xiaomi Redmi 14C", "ro": "Xiaomi Redmi 14C" },
+      "short_description": { "en": "Entry-level phone with a large battery.", "ro": "Telefon de bază cu baterie mare." },
+      "description": { "en": "A low-cost phone covering the essentials, with a roomy battery for two-day use.", "ro": "Un telefon ieftin care acoperă esențialul, cu baterie generoasă pentru două zile." },
+      "specs": { "display_size_in": 6.88, "display_type": "LCD", "refresh_rate_hz": 120, "chipset": "MediaTek Helio G81", "main_camera_mp": 50, "front_camera_mp": 13, "battery_mah": 5160, "charging_w": 18, "os": "Android 14", "five_g": false, "nfc": false, "weight_g": 204, "release_year": 2024 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "source": { "url": "https://www.mi.com/global/product/redmi-14c/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "XIA-R14C-BLK-4-128", "price": 229900, "stock": 30, "is_default": true, "options": { "color": "black", "ram": "4gb", "storage": "128gb" } },
+        { "sku": "XIA-R14C-GRN-4-128", "price": 229900, "stock": 18, "options": { "color": "green", "ram": "4gb", "storage": "128gb" } }
+      ]
+    },
+    {
+      "type": "case", "slug": "silicone-case-iphone-17", "sku_base": "CASE-IP17-SIL",
+      "brand": "apple", "segment": null, "terms": ["silicone"],
+      "name": { "en": "Silicone Case for iPhone 17", "ro": "Husă din silicon pentru iPhone 17" },
+      "short_description": { "en": "Soft-touch silicone case with MagSafe support.", "ro": "Husă din silicon soft-touch, cu suport MagSafe." },
+      "description": { "en": "A slim silicone case with a microfibre lining and MagSafe magnets.", "ro": "O husă subțire din silicon, cu căptușeală din microfibră și magneți MagSafe." },
+      "specs": { "material": "Silicone", "magsafe_compatible": true, "drop_protection_m": 1.5, "thickness_mm": 2.0 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": ["apple-iphone-17"],
+      "source": { "url": "https://www.apple.com/shop/iphone/iphone-cases", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "CASE-IP17-SIL-BLK", "price": 59900, "stock": 40, "is_default": true, "options": { "color": "black" } },
+        { "sku": "CASE-IP17-SIL-WHT", "price": 59900, "stock": 35, "options": { "color": "white" } }
+      ]
+    },
+    {
+      "type": "case", "slug": "clear-case-galaxy-s25", "sku_base": "CASE-S25-CLR",
+      "brand": "samsung", "segment": null, "terms": ["tpu-clear"],
+      "name": { "en": "Clear Case for Galaxy S25", "ro": "Husă transparentă pentru Galaxy S25" },
+      "short_description": { "en": "Transparent TPU case that shows off the phone.", "ro": "Husă TPU transparentă care pune în valoare telefonul." },
+      "description": { "en": "A grippy, see-through TPU case with raised edges to protect the screen and camera.", "ro": "O husă TPU transparentă, cu margini înălțate pentru protecția ecranului și camerei." },
+      "specs": { "material": "TPU/Clear", "magsafe_compatible": false, "drop_protection_m": 1.2, "thickness_mm": 1.6 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": ["samsung-galaxy-s25"],
+      "source": { "url": "https://www.samsung.com/mobile-accessories/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "CASE-S25-CLR-BLK", "price": 49900, "stock": 30, "is_default": true, "options": { "color": "black" } },
+        { "sku": "CASE-S25-CLR-NVY", "price": 49900, "stock": 22, "options": { "color": "navy" } }
+      ]
+    },
+    {
+      "type": "case", "slug": "rugged-case-pixel-9a", "sku_base": "CASE-P9A-RGD",
+      "brand": "google", "segment": null, "terms": ["rugged"],
+      "name": { "en": "Rugged Case for Pixel 9a", "ro": "Husă rezistentă pentru Pixel 9a" },
+      "short_description": { "en": "Heavy-duty case with reinforced corners.", "ro": "Husă rezistentă, cu colțuri ranforsate." },
+      "description": { "en": "A two-layer rugged case with shock-absorbing corners for extra drop protection.", "ro": "O husă rezistentă în două straturi, cu colțuri care absorb șocurile." },
+      "specs": { "material": "Rugged", "magsafe_compatible": false, "drop_protection_m": 2.5, "thickness_mm": 3.1 },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": ["google-pixel-9a"],
+      "source": { "url": "https://store.google.com/category/accessories", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "CASE-P9A-RGD-BLK", "price": 69900, "stock": 18, "is_default": true, "options": { "color": "black" } },
+        { "sku": "CASE-P9A-RGD-GRN", "price": 69900, "stock": 12, "options": { "color": "green" } }
+      ]
+    },
+    {
+      "type": "headset_bt", "slug": "apple-airpods-4", "sku_base": "APL-APP4",
+      "brand": "apple", "segment": null, "terms": ["bluetooth"],
+      "name": { "en": "Apple AirPods 4", "ro": "Apple AirPods 4" },
+      "short_description": { "en": "Open-fit wireless earbuds with active noise cancelling.", "ro": "Căști wireless open-fit cu anulare activă a zgomotului." },
+      "description": { "en": "Comfortable open-fit earbuds with personalised spatial audio and a compact charging case.", "ro": "Căști open-fit confortabile, cu audio spațial personalizat și carcasă compactă de încărcare." },
+      "specs": { "form_factor": "in-ear", "bluetooth_version": "5.3", "codecs": ["SBC", "AAC"], "anc": true, "battery_h": 5, "battery_with_case_h": 30, "ip_rating": "IP54" },
+      "status": "published", "is_featured": true, "featured_position": 3,
+      "compatible_with": [],
+      "source": { "url": "https://www.apple.com/airpods-4/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "APL-APP4-WHT", "price": 299900, "stock": 25, "is_default": true, "options": { "color": "white" } }
+      ]
+    },
+    {
+      "type": "headset_bt", "slug": "jbl-tune-buds", "sku_base": "JBL-TBUDS",
+      "brand": "jbl", "segment": null, "terms": ["bluetooth"],
+      "name": { "en": "JBL Tune Buds", "ro": "JBL Tune Buds" },
+      "short_description": { "en": "Affordable true-wireless earbuds with noise cancelling.", "ro": "Căști true-wireless accesibile, cu anulare a zgomotului." },
+      "description": { "en": "Budget-friendly earbuds with punchy bass, noise cancelling and a long-lasting case.", "ro": "Căști accesibile cu bas puternic, anulare a zgomotului și carcasă cu autonomie mare." },
+      "specs": { "form_factor": "in-ear", "bluetooth_version": "5.3", "codecs": ["SBC", "AAC"], "anc": true, "battery_h": 8, "battery_with_case_h": 48, "ip_rating": "IP54" },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": [],
+      "source": { "url": "https://www.jbl.com/true-wireless/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "JBL-TBUDS-BLK", "price": 99900, "stock": 40, "is_default": true, "options": { "color": "black" } },
+        { "sku": "JBL-TBUDS-BLU", "price": 99900, "stock": 28, "options": { "color": "blue" } }
+      ]
+    },
+    {
+      "type": "headset_wired", "slug": "apple-earpods-usb-c", "sku_base": "APL-EPUSBC",
+      "brand": "apple", "segment": null, "terms": ["usb-c-wired"],
+      "name": { "en": "Apple EarPods (USB-C)", "ro": "Apple EarPods (USB-C)" },
+      "short_description": { "en": "Wired EarPods with a USB-C connector.", "ro": "Căști EarPods cu fir și conector USB-C." },
+      "description": { "en": "Classic EarPods tuning with an inline remote and mic, now with USB-C.", "ro": "Sunetul clasic EarPods, cu telecomandă și microfon pe fir, acum cu USB-C." },
+      "specs": { "connector": "USB-C", "cable_length_m": 1.1, "mic": true, "driver_mm": 12, "form_factor": "in-ear" },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": [],
+      "source": { "url": "https://www.apple.com/shop/product/earpods-usb-c", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "APL-EPUSBC-WHT", "price": 39900, "stock": 50, "is_default": true, "options": { "color": "white" } }
+      ]
+    },
+    {
+      "type": "headset_wired", "slug": "xiaomi-wired-earphones", "sku_base": "XIA-WIRED",
+      "brand": "xiaomi", "segment": null, "terms": ["jack-3-5"],
+      "name": { "en": "Xiaomi Wired Earphones", "ro": "Căști cu fir Xiaomi" },
+      "short_description": { "en": "Budget 3.5 mm earphones with a mic.", "ro": "Căști accesibile cu jack 3.5 mm și microfon." },
+      "description": { "en": "Simple, reliable 3.5 mm earphones with an inline mic for calls.", "ro": "Căști simple și fiabile cu jack 3.5 mm și microfon pentru apeluri." },
+      "specs": { "connector": "3.5 mm", "cable_length_m": 1.25, "mic": true, "driver_mm": 10, "form_factor": "in-ear" },
+      "status": "published", "is_featured": false, "featured_position": null,
+      "compatible_with": [],
+      "source": { "url": "https://www.mi.com/global/product/mi-earphones/", "date": "2026-11-10" },
+      "variants": [
+        { "sku": "XIA-WIRED-BLK", "price": 19900, "stock": 60, "is_default": true, "options": { "color": "black" } }
+      ]
+    }
+  ]
+}

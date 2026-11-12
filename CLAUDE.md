@@ -5,12 +5,16 @@ scope and architecture is [`PROMPT.md`](PROMPT.md)** — read it for the full br
 `.claude/` is the fast-orientation kit; it points at where things live and the rules that are
 easy to get wrong.
 
-> **Status (as of 2026-11-10): milestone 1 (setup) complete.** `backend/` (Laravel 13.40) and
-> `frontend/` (Angular 22.2) are scaffolded and boot; API ↔ SPA dev proxy verified. Later-milestone
-> pieces (spatie packages, auth flows, catalog, storefront) are still **target** architecture in
-> the `.claude/context/*` docs — refresh them against real code as each milestone lands (see
-> [`.claude/commands/bootstrap-context.md`](.claude/commands/bootstrap-context.md)). What's actually
-> built so far is in [`docs/DECISIONS.md`](docs/DECISIONS.md).
+> **Status (as of 2026-11-10): milestones 1–10 complete** — the shop is built end to end. Auth
+> (Sanctum SPA + spatie roles), catalog schema + seeded demo data, public catalog API
+> (filters/facets/sort/detail/i18n), storefront (home + featured slider + URL-synced listing),
+> PDP (variant selector + dynamic specs), favorites + cart (guest→user merge), checkout + mock
+> payment (+ order JSON), admin back office (products/variants/specs/publish/featured/orders/
+> users/taxonomies/activity), and polish (caching, recently-viewed, cross-tab auth, CI, Playwright
+> e2e spec). 60 backend tests + frontend unit tests green. Per-milestone decisions and what's
+> **deferred** (product comparison, deeper a11y, phase-2 SSR/search/reviews) are in
+> [`docs/DECISIONS.md`](docs/DECISIONS.md). The `.claude/context/*` docs describe the intended
+> architecture; refresh them against the code with `/bootstrap-context` as it evolves.
 
 ## Who the user is (read before explaining anything)
 Experienced **PHP (WordPress/Drupal)** + **front-end (React/Vue/jQuery)** dev who has **never

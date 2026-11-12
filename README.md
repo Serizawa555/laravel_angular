@@ -51,6 +51,23 @@ curl -i http://localhost:8000/sanctum/csrf-cookie  # sets XSRF-TOKEN cookie
 | Frontend build | `cd frontend && npm run build` |
 | Frontend tests (Vitest) | `cd frontend && npm test` |
 
+## Demo accounts
+Seeded by `./vendor/bin/sail artisan db:seed` (all password `password`): superadmin from `.env`
+(`SUPERADMIN_*`), `admin@phoneshop.test`, `editor@phoneshop.test`, `customer@phoneshop.test`.
+
 ## Status
-**Milestone 1 (setup) complete.** Next: milestone 2 (Sanctum SPA auth + spatie roles). See
-[`PROMPT.md §12`](PROMPT.md) for the full roadmap.
+**All core milestones (1–10) complete** — a working shop: storefront (home, featured slider,
+filterable listing, product pages with variant selection), favorites + cart (guest → user merge),
+checkout with a mock payment gateway and downloadable order JSON, EN/RO i18n, and a role-based
+admin back office. 60 backend tests + frontend unit tests pass; CI in `.github/workflows/ci.yml`;
+an e2e happy-path in `frontend/e2e/`. Per-milestone decisions: [`docs/DECISIONS.md`](docs/DECISIONS.md);
+ERD: [`docs/ERD.md`](docs/ERD.md).
+
+Open the storefront at **http://localhost:4200** and sign in as `admin@phoneshop.test` /
+`password` to see the **Admin** area. Deferred (nice-to-have): product comparison, a deeper a11y
+pass, and phase-2 items (SSR/SEO, search, reviews, emails). See [`PROMPT.md`](PROMPT.md) §10–11.
+
+### End-to-end (Playwright)
+```bash
+cd frontend && npx playwright install && npx playwright test   # backend must be up on :8000
+```

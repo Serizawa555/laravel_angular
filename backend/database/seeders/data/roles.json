@@ -1,0 +1,41 @@
+{
+  "_comment": "Structural config: roles + their permission grants (spatie, guard 'web' = Sanctum SPA session). Edit here, then re-seed (see .claude/workflows/config-and-seed.md). superadmin is granted everything at runtime via Gate::before, so it needs no explicit permissions.",
+  "permissions": [
+    "products.create",
+    "products.update",
+    "products.viewDrafts",
+    "products.publish",
+    "products.delete",
+    "products.restore",
+    "products.forceDelete",
+    "featured.manage",
+    "taxonomies.manage",
+    "attributes.manage",
+    "users.manage",
+    "orders.viewAny",
+    "activitylog.view"
+  ],
+  "roles": {
+    "customer": [],
+    "editor": [
+      "products.create",
+      "products.update",
+      "products.viewDrafts"
+    ],
+    "admin": [
+      "products.create",
+      "products.update",
+      "products.viewDrafts",
+      "products.publish",
+      "products.delete",
+      "products.restore",
+      "featured.manage",
+      "taxonomies.manage",
+      "attributes.manage",
+      "users.manage",
+      "orders.viewAny",
+      "activitylog.view"
+    ],
+    "superadmin": []
+  }
+}

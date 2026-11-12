@@ -1,0 +1,49 @@
+{
+  "app": { "title": "PhoneShop", "tagline": "Telefoane și accesorii" },
+  "nav": { "home": "Acasă", "phones": "Telefoane", "cases": "Huse", "headsets": "Căști", "login": "Autentificare", "register": "Înregistrare", "logout": "Ieșire", "account": "Contul meu", "orders": "Comenzile mele", "favorites": "Favorite", "cart": "Coș", "checkout": "Finalizează" },
+  "home": { "featured": "Recomandate", "browse": "Explorează magazinul" },
+  "listing": {
+    "results": "{{count}} rezultate",
+    "search": "Caută",
+    "search_placeholder": "Caută produse…",
+    "sort": "Sortează",
+    "sort_newest": "Cele mai noi",
+    "sort_price_asc": "Preț: crescător",
+    "sort_price_desc": "Preț: descrescător",
+    "sort_name": "Nume",
+    "grid": "Grilă",
+    "list": "Listă",
+    "filters": "Filtre",
+    "clear": "Șterge tot",
+    "in_stock": "Doar în stoc",
+    "price": "Preț",
+    "min": "Min",
+    "max": "Max",
+    "empty": "Niciun produs nu corespunde filtrelor.",
+    "load_more": "Încarcă mai multe",
+    "apply": "Aplică"
+  },
+  "facet": { "type": "Tip", "brand": "Marcă", "segment": "Segment", "color": "Culoare", "ram": "RAM", "storage": "Stocare" },
+  "type": { "phone": "Telefon", "case": "Husă", "headset_bt": "Cască Bluetooth", "headset_wired": "Cască cu fir" },
+  "product": {
+    "from": "de la",
+    "in_stock": "În stoc",
+    "low_stock": "Doar {{count}} rămase",
+    "out_of_stock": "Stoc epuizat",
+    "add_to_cart": "Adaugă în coș",
+    "add_to_favorites": "Adaugă la favorite",
+    "specs": "Specificații",
+    "description": "Descriere",
+    "accessories": "Accesorii pentru acest telefon",
+    "fits": "Compatibil cu aceste telefoane",
+    "related": "Produse similare",
+    "select_options": "Alege opțiunile",
+    "quantity": "Cantitate"
+  },
+  "auth": {
+    "login": "Autentificare", "register": "Creează un cont", "email": "Email", "password": "Parolă",
+    "confirm_password": "Confirmă parola", "name": "Nume",
+    "no_account": "Nu ai cont?", "have_account": "Ai deja un cont?",
+    "logging_in": "Se autentifică…", "creating": "Se creează…"
+  }
+}

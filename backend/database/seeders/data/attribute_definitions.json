@@ -1,0 +1,34 @@
+[
+  { "product_type": "phone", "key": "display_size_in", "label": { "en": "Display size", "ro": "Diagonală ecran" }, "data_type": "decimal", "unit": "\"", "group": "Display", "is_filterable": false, "is_required": true, "sort": 0 },
+  { "product_type": "phone", "key": "display_type", "label": { "en": "Display type", "ro": "Tip ecran" }, "data_type": "enum", "options": ["OLED", "AMOLED", "LCD"], "group": "Display", "is_filterable": true, "is_required": false, "sort": 1 },
+  { "product_type": "phone", "key": "refresh_rate_hz", "label": { "en": "Refresh rate", "ro": "Rată de reîmprospătare" }, "data_type": "int", "unit": "Hz", "group": "Display", "is_filterable": true, "is_required": false, "sort": 2 },
+  { "product_type": "phone", "key": "chipset", "label": { "en": "Chipset", "ro": "Procesor" }, "data_type": "string", "group": "Performance", "is_filterable": false, "is_required": false, "sort": 3 },
+  { "product_type": "phone", "key": "main_camera_mp", "label": { "en": "Main camera", "ro": "Cameră principală" }, "data_type": "int", "unit": "MP", "group": "Camera", "is_filterable": true, "is_required": false, "sort": 4 },
+  { "product_type": "phone", "key": "front_camera_mp", "label": { "en": "Front camera", "ro": "Cameră frontală" }, "data_type": "int", "unit": "MP", "group": "Camera", "is_filterable": false, "is_required": false, "sort": 5 },
+  { "product_type": "phone", "key": "battery_mah", "label": { "en": "Battery", "ro": "Baterie" }, "data_type": "int", "unit": "mAh", "group": "Battery", "is_filterable": true, "is_required": false, "sort": 6 },
+  { "product_type": "phone", "key": "charging_w", "label": { "en": "Charging", "ro": "Încărcare" }, "data_type": "int", "unit": "W", "group": "Battery", "is_filterable": false, "is_required": false, "sort": 7 },
+  { "product_type": "phone", "key": "os", "label": { "en": "Operating system", "ro": "Sistem de operare" }, "data_type": "string", "group": "Software", "is_filterable": false, "is_required": false, "sort": 8 },
+  { "product_type": "phone", "key": "five_g", "label": { "en": "5G", "ro": "5G" }, "data_type": "bool", "group": "Connectivity", "is_filterable": true, "is_required": false, "sort": 9 },
+  { "product_type": "phone", "key": "nfc", "label": { "en": "NFC", "ro": "NFC" }, "data_type": "bool", "group": "Connectivity", "is_filterable": false, "is_required": false, "sort": 10 },
+  { "product_type": "phone", "key": "weight_g", "label": { "en": "Weight", "ro": "Greutate" }, "data_type": "int", "unit": "g", "group": "Design", "is_filterable": false, "is_required": false, "sort": 11 },
+  { "product_type": "phone", "key": "release_year", "label": { "en": "Release year", "ro": "An lansare" }, "data_type": "int", "group": "General", "is_filterable": false, "is_required": false, "sort": 12 },
+
+  { "product_type": "case", "key": "material", "label": { "en": "Material", "ro": "Material" }, "data_type": "string", "group": "General", "is_filterable": true, "is_required": true, "sort": 0 },
+  { "product_type": "case", "key": "magsafe_compatible", "label": { "en": "MagSafe compatible", "ro": "Compatibil MagSafe" }, "data_type": "bool", "group": "Features", "is_filterable": true, "is_required": false, "sort": 1 },
+  { "product_type": "case", "key": "drop_protection_m", "label": { "en": "Drop protection", "ro": "Protecție la cădere" }, "data_type": "decimal", "unit": "m", "group": "Protection", "is_filterable": false, "is_required": false, "sort": 2 },
+  { "product_type": "case", "key": "thickness_mm", "label": { "en": "Thickness", "ro": "Grosime" }, "data_type": "decimal", "unit": "mm", "group": "Design", "is_filterable": false, "is_required": false, "sort": 3 },
+
+  { "product_type": "headset_bt", "key": "form_factor", "label": { "en": "Form factor", "ro": "Format" }, "data_type": "enum", "options": ["in-ear", "on-ear", "over-ear"], "group": "Design", "is_filterable": true, "is_required": true, "sort": 0 },
+  { "product_type": "headset_bt", "key": "bluetooth_version", "label": { "en": "Bluetooth version", "ro": "Versiune Bluetooth" }, "data_type": "string", "group": "Connectivity", "is_filterable": false, "is_required": false, "sort": 1 },
+  { "product_type": "headset_bt", "key": "codecs", "label": { "en": "Codecs", "ro": "Codecuri" }, "data_type": "list", "options": ["SBC", "AAC", "LDAC", "aptX"], "group": "Audio", "is_filterable": false, "is_required": false, "sort": 2 },
+  { "product_type": "headset_bt", "key": "anc", "label": { "en": "Active noise cancelling", "ro": "Anulare activă a zgomotului" }, "data_type": "bool", "group": "Audio", "is_filterable": true, "is_required": false, "sort": 3 },
+  { "product_type": "headset_bt", "key": "battery_h", "label": { "en": "Battery (earbuds)", "ro": "Autonomie (căști)" }, "data_type": "int", "unit": "h", "group": "Battery", "is_filterable": false, "is_required": false, "sort": 4 },
+  { "product_type": "headset_bt", "key": "battery_with_case_h", "label": { "en": "Battery with case", "ro": "Autonomie cu carcasă" }, "data_type": "int", "unit": "h", "group": "Battery", "is_filterable": false, "is_required": false, "sort": 5 },
+  { "product_type": "headset_bt", "key": "ip_rating", "label": { "en": "IP rating", "ro": "Certificare IP" }, "data_type": "string", "group": "Durability", "is_filterable": false, "is_required": false, "sort": 6 },
+
+  { "product_type": "headset_wired", "key": "connector", "label": { "en": "Connector", "ro": "Conector" }, "data_type": "enum", "options": ["USB-C", "3.5 mm", "Lightning"], "group": "Connectivity", "is_filterable": true, "is_required": true, "sort": 0 },
+  { "product_type": "headset_wired", "key": "cable_length_m", "label": { "en": "Cable length", "ro": "Lungime cablu" }, "data_type": "decimal", "unit": "m", "group": "Design", "is_filterable": false, "is_required": false, "sort": 1 },
+  { "product_type": "headset_wired", "key": "mic", "label": { "en": "Microphone", "ro": "Microfon" }, "data_type": "bool", "group": "Features", "is_filterable": false, "is_required": false, "sort": 2 },
+  { "product_type": "headset_wired", "key": "driver_mm", "label": { "en": "Driver", "ro": "Driver" }, "data_type": "int", "unit": "mm", "group": "Audio", "is_filterable": false, "is_required": false, "sort": 3 },
+  { "product_type": "headset_wired", "key": "form_factor", "label": { "en": "Form factor", "ro": "Format" }, "data_type": "enum", "options": ["in-ear", "on-ear", "over-ear"], "group": "Design", "is_filterable": true, "is_required": false, "sort": 4 }
+]

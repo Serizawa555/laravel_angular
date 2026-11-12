@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\SetLocale;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -16,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
         // Sanctum SPA (cookie) auth: make /api stateful so the session + CSRF cookie
         // from the Angular dev origin are honoured. See PROMPT.md §2 (auth).
         $middleware->statefulApi();
+
+        // Resolve response locale from Accept-Language on every API request.
+        $middleware->api(append: [SetLocale::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

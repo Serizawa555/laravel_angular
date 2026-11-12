@@ -1,0 +1,49 @@
+{
+  "app": { "title": "PhoneShop", "tagline": "Phones & accessories" },
+  "nav": { "home": "Home", "phones": "Phones", "cases": "Cases", "headsets": "Headsets", "login": "Log in", "register": "Register", "logout": "Log out", "account": "My account", "orders": "My orders", "favorites": "Favorites", "cart": "Cart", "checkout": "Checkout" },
+  "home": { "featured": "Featured", "browse": "Browse the shop" },
+  "listing": {
+    "results": "{{count}} results",
+    "search": "Search",
+    "search_placeholder": "Search products…",
+    "sort": "Sort",
+    "sort_newest": "Newest",
+    "sort_price_asc": "Price: low to high",
+    "sort_price_desc": "Price: high to low",
+    "sort_name": "Name",
+    "grid": "Grid",
+    "list": "List",
+    "filters": "Filters",
+    "clear": "Clear all",
+    "in_stock": "In stock only",
+    "price": "Price",
+    "min": "Min",
+    "max": "Max",
+    "empty": "No products match your filters.",
+    "load_more": "Load more",
+    "apply": "Apply"
+  },
+  "facet": { "type": "Type", "brand": "Brand", "segment": "Segment", "color": "Colour", "ram": "RAM", "storage": "Storage" },
+  "type": { "phone": "Phone", "case": "Case", "headset_bt": "Bluetooth headset", "headset_wired": "Wired headset" },
+  "product": {
+    "from": "from",
+    "in_stock": "In stock",
+    "low_stock": "Only {{count}} left",
+    "out_of_stock": "Out of stock",
+    "add_to_cart": "Add to cart",
+    "add_to_favorites": "Add to favorites",
+    "specs": "Specifications",
+    "description": "Description",
+    "accessories": "Accessories for this phone",
+    "fits": "Fits these phones",
+    "related": "Related products",
+    "select_options": "Select options",
+    "quantity": "Quantity"
+  },
+  "auth": {
+    "login": "Log in", "register": "Create an account", "email": "Email", "password": "Password",
+    "confirm_password": "Confirm password", "name": "Name",
+    "no_account": "No account?", "have_account": "Already have an account?",
+    "logging_in": "Logging in…", "creating": "Creating…"
+  }
+}

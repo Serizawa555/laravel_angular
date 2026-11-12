@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Product image placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f4f7"/>
+      <stop offset="1" stop-color="#e6e8f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#g)"/>
+  <g transform="translate(220 150)" fill="none" stroke="#335EEA" stroke-width="10" opacity="0.6">
+    <rect x="0" y="0" width="160" height="300" rx="24"/>
+    <line x1="60" y1="24" x2="100" y2="24" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="80" cy="268" r="10" fill="#335EEA" stroke="none"/>
+  </g>
+  <text x="300" y="500" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#9aa2b1" text-anchor="middle">PhoneShop</text>
+</svg>

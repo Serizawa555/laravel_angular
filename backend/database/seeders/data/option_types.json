@@ -1,0 +1,35 @@
+[
+  {
+    "code": "color",
+    "name": { "en": "Colour", "ro": "Culoare" },
+    "values": [
+      { "code": "black", "label": { "en": "Black", "ro": "Negru" }, "sort": 0, "meta": { "hex": "#1a1a1a" } },
+      { "code": "white", "label": { "en": "White", "ro": "Alb" }, "sort": 1, "meta": { "hex": "#f5f5f5" } },
+      { "code": "blue", "label": { "en": "Blue", "ro": "Albastru" }, "sort": 2, "meta": { "hex": "#2b4a8b" } },
+      { "code": "navy", "label": { "en": "Navy", "ro": "Bleumarin" }, "sort": 3, "meta": { "hex": "#1f2a44" } },
+      { "code": "silver", "label": { "en": "Silver", "ro": "Argintiu" }, "sort": 4, "meta": { "hex": "#c7c9cc" } },
+      { "code": "green", "label": { "en": "Green", "ro": "Verde" }, "sort": 5, "meta": { "hex": "#3a5f45" } },
+      { "code": "graphite", "label": { "en": "Graphite", "ro": "Grafit" }, "sort": 6, "meta": { "hex": "#3a3a3c" } }
+    ]
+  },
+  {
+    "code": "ram",
+    "name": { "en": "RAM", "ro": "RAM" },
+    "values": [
+      { "code": "4gb", "label": { "en": "4 GB", "ro": "4 GB" }, "sort": 0, "meta": { "gb": 4 } },
+      { "code": "6gb", "label": { "en": "6 GB", "ro": "6 GB" }, "sort": 1, "meta": { "gb": 6 } },
+      { "code": "8gb", "label": { "en": "8 GB", "ro": "8 GB" }, "sort": 2, "meta": { "gb": 8 } },
+      { "code": "12gb", "label": { "en": "12 GB", "ro": "12 GB" }, "sort": 3, "meta": { "gb": 12 } }
+    ]
+  },
+  {
+    "code": "storage",
+    "name": { "en": "Storage", "ro": "Stocare" },
+    "values": [
+      { "code": "64gb", "label": { "en": "64 GB", "ro": "64 GB" }, "sort": 0, "meta": { "gb": 64 } },
+      { "code": "128gb", "label": { "en": "128 GB", "ro": "128 GB" }, "sort": 1, "meta": { "gb": 128 } },
+      { "code": "256gb", "label": { "en": "256 GB", "ro": "256 GB" }, "sort": 2, "meta": { "gb": 256 } },
+      { "code": "512gb", "label": { "en": "512 GB", "ro": "512 GB" }, "sort": 3, "meta": { "gb": 512 } }
+    ]
+  }
+]

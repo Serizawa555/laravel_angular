@@ -1,0 +1,51 @@
+[
+  {
+    "code": "product_type",
+    "name": { "en": "Product type", "ro": "Tip de produs" },
+    "terms": [
+      { "slug": "phone", "name": { "en": "Phone", "ro": "Telefon" }, "weight": 0 },
+      { "slug": "case", "name": { "en": "Case", "ro": "Husă" }, "weight": 1 },
+      { "slug": "bluetooth-headset", "name": { "en": "Bluetooth headset", "ro": "Cască Bluetooth" }, "weight": 2 },
+      { "slug": "wired-headset", "name": { "en": "Wired headset", "ro": "Cască cu fir" }, "weight": 3 }
+    ]
+  },
+  {
+    "code": "brand",
+    "name": { "en": "Brand", "ro": "Marcă" },
+    "terms": [
+      { "slug": "apple", "name": { "en": "Apple", "ro": "Apple" }, "weight": 0 },
+      { "slug": "samsung", "name": { "en": "Samsung", "ro": "Samsung" }, "weight": 1 },
+      { "slug": "xiaomi", "name": { "en": "Xiaomi", "ro": "Xiaomi" }, "weight": 2 },
+      { "slug": "google", "name": { "en": "Google", "ro": "Google" }, "weight": 3 },
+      { "slug": "jbl", "name": { "en": "JBL", "ro": "JBL" }, "weight": 4 }
+    ]
+  },
+  {
+    "code": "segment",
+    "name": { "en": "Segment", "ro": "Segment" },
+    "terms": [
+      { "slug": "economy", "name": { "en": "Economy", "ro": "Economic" }, "weight": 0 },
+      { "slug": "mid-range", "name": { "en": "Mid-range", "ro": "Gamă medie" }, "weight": 1 },
+      { "slug": "flagship", "name": { "en": "Flagship", "ro": "Flagship" }, "weight": 2 }
+    ]
+  },
+  {
+    "code": "connection",
+    "name": { "en": "Connection", "ro": "Conexiune" },
+    "terms": [
+      { "slug": "bluetooth", "name": { "en": "Bluetooth", "ro": "Bluetooth" }, "weight": 0 },
+      { "slug": "usb-c-wired", "name": { "en": "USB-C wired", "ro": "USB-C cu fir" }, "weight": 1 },
+      { "slug": "jack-3-5", "name": { "en": "3.5 mm jack", "ro": "Jack 3.5 mm" }, "weight": 2 }
+    ]
+  },
+  {
+    "code": "case_material",
+    "name": { "en": "Case material", "ro": "Material husă" },
+    "terms": [
+      { "slug": "silicone", "name": { "en": "Silicone", "ro": "Silicon" }, "weight": 0 },
+      { "slug": "leather", "name": { "en": "Leather", "ro": "Piele" }, "weight": 1 },
+      { "slug": "tpu-clear", "name": { "en": "TPU / Clear", "ro": "TPU / Transparent" }, "weight": 2 },
+      { "slug": "rugged", "name": { "en": "Rugged", "ro": "Rezistentă" }, "weight": 3 }
+    ]
+  }
+]
