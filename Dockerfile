@@ -20,7 +20,8 @@ COPY backend/ ./
 RUN composer dump-autoload --optimize --no-dev --no-scripts
 
 # 3. Runtime: FrankenPHP (single binary serving PHP + static files)
-FROM dunglas/frankenphp:1-php8.3
+# PHP 8.4: the composer.lock (resolved on PHP 8.5) requires >= 8.4.
+FROM dunglas/frankenphp:1-php8.4
 RUN install-php-extensions pdo_pgsql gd intl zip bcmath exif opcache
 
 WORKDIR /app

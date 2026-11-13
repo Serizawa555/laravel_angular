@@ -4,6 +4,7 @@ backend/vendor
 frontend/dist
 backend/.env
 backend/.env.*
+backend/bootstrap/cache/*.php
 backend/storage/app/private/orders
 backend/storage/logs/*
 **/*.log
