@@ -123,21 +123,19 @@ import { RecentlyViewedStore } from '../../stores/recently-viewed.store';
 
         <!-- Specs -->
         @if (p.spec_groups.length) {
-          <div class="mt-10">
+          <div class="mt-10 flex flex-col gap-6">
             <h2 class="text-lg font-semibold text-ink">{{ 'product.specs' | transloco }}</h2>
             @for (group of p.spec_groups; track group.group) {
-              <div class="mt-4">
+              <div class="flex flex-col gap-2">
                 <h3 class="text-sm font-medium text-gray-500">{{ group.group }}</h3>
-                <table class="mt-1 w-full text-sm">
-                  <tbody>
-                    @for (row of group.rows; track row.key) {
-                      <tr class="border-b">
-                        <td class="py-1.5 pr-4 text-gray-600">{{ row.label }}</td>
-                        <td class="py-1.5 font-medium">{{ specValue(row.value) }}{{ row.unit ? ' ' + row.unit : '' }}</td>
-                      </tr>
-                    }
-                  </tbody>
-                </table>
+                <dl class="flex flex-col">
+                  @for (row of group.rows; track row.key) {
+                    <div class="flex gap-4 border-b py-1.5 text-sm">
+                      <dt class="flex-1 text-gray-600">{{ row.label }}</dt>
+                      <dd class="flex-1 font-medium">{{ specValue(row.value) }}{{ row.unit ? ' ' + row.unit : '' }}</dd>
+                    </div>
+                  }
+                </dl>
               </div>
             }
           </div>
