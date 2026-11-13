@@ -23,6 +23,10 @@ RUN composer dump-autoload --optimize --no-dev --no-scripts
 # PHP 8.4: the composer.lock (resolved on PHP 8.5) requires >= 8.4.
 FROM dunglas/frankenphp:1-php8.4
 RUN install-php-extensions pdo_pgsql gd intl zip bcmath exif opcache
+# The base image grants the binary cap_net_bind_service (to bind :80/:443). Render runs
+# containers with no-new-privileges, which makes exec'ing a capability-carrying binary fail
+# with EPERM ("Operation not permitted"). We bind to a high $PORT, so strip the capability.
+RUN setcap -r /usr/local/bin/frankenphp || true
 
 WORKDIR /app
 # Laravel app + vendor
